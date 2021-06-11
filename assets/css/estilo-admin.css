@@ -1,0 +1,22 @@
+.panel-body{
+    display:grid;
+    grid-template-columns: repeat(auto-fill , 
+    minmax(130px , 1fr));
+    gap:10px;
+    transition: transform 100ms ease-in-out;
+}
+.foto_item{
+    width:150px;
+    height:200px;
+    text-align: center;
+    margin-right:10px;
+
+    align-content:center;
+ 
+
+}
+.foto_item img {
+    width:150px;
+}
+
+
