@@ -12,11 +12,12 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])){
     $email        =    addslashes($_POST['email']);
     $senha        =    addslashes($_POST['senha']);
     $novasenha    =    addslashes($_POST['novasenha']);
+    $foto  = $_FILES['foto'];
    $id = $_SESSION['cLogin'];
 
  
 
-   $Usuario->editUser($nome , $email , $senha , $novasenha=null, $telefone, $id);
+   $Usuario->editUser($nome , $email , $senha , $novasenha=null, $telefone, $id, $foto);
 
 }
 if(isset($_GET['id']) && !empty($_GET['id'])){
@@ -73,7 +74,7 @@ echo "<script>window.location.href='meus-anuncios.php';</script>";
                     <div class="tg-fileuploadlabel">
                       <label>Por favor selecione sua imagem</label>
                    
-                      <input type="file"  class="form-control form-control-file text-capitalize btn-success"  name="fotos[]" multiple>
+                      <input type="file"  class="form-control form-control-file text-capitalize btn-success"  name="foto[]" multiple >
                       <span>maximo 500KB</span> </div>
                   </div>
                 </div>

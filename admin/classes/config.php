@@ -8,4 +8,6 @@ try{
     exit;
 }
 
+define("HOME","http://localhost/php/manicure/orientacaoobejto/");
+define("HOMEAdmin","http://localhost/php/manicure/orientacaoobejto/admin/");
 ?>

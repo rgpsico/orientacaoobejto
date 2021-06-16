@@ -45,11 +45,7 @@ class Anuncios{
 
     public function getMeusAnuncios(){
     global $pdo;   
-
     $array = array();
-
-
-
         $sql = $pdo->prepare("SELECT 
         *, 
         (select anuncios_imagens.url from anuncios_imagens where 
@@ -60,8 +56,7 @@ class Anuncios{
         $sql->bindValue(":id_usuario",$_SESSION['cLogin']);
         $sql->execute();
 
-       
-        
+               
     if ($sql->rowCount() > 0){
         $array = $sql->fetchAll();
     }
@@ -70,12 +65,9 @@ class Anuncios{
 
     public function getUltimosAnuncios(int $page , int $perPage, array $filtros){
         global $pdo;
-
     $offset = ($page - 1) * 2;
-
     $array = array();
-    
-    $filtrosString = array('1=1');
+        $filtrosString = array('1=1');
     
         if(!empty($filtros['categoria'])){
             $filtrosString[] = 'anuncios.id_categoria = :id_categoria';
@@ -127,13 +119,15 @@ class Anuncios{
     public function addAnuncio($titulo, $categoria , $valor , $descricao , $estado,$fotos){
         try {
         global $pdo;
+       $dataCadastro = date("m-d-y");   
         $sql = $pdo->prepare("INSERT INTO anuncios  set
                             titulo       = :titulo , 
                             id_categoria = :id_categoria ,
                             id_usuario   = :id_usuario ,
                             descricao    = :descricao ,        
                             valor        = :valor , 
-                            estado       = :estado ");
+                            estado       = :estado , 
+                            dataCad      = Curdate()");
 
         $sql->bindValue(":titulo",$titulo);
         $sql->bindValue(":id_categoria",$categoria);
@@ -141,6 +135,7 @@ class Anuncios{
         $sql->bindValue(":descricao",$descricao);
         $sql->bindValue(":valor",$valor);
         $sql->bindValue(":estado",$estado);
+
         $sql->execute();
         $lastID = $pdo->lastInsertId();
        
@@ -172,6 +167,23 @@ public function getAnuncio($id){
     $sql = $pdo->prepare("SELECT *,
     (select categoria.nome from categoria where categoria.id = anuncios.id_categoria
             ) as categoria,
+    (select bairros_atendimento.bairro1 
+     from bairros_atendimento where bairros_atendimento.id = anuncios.id_categoria
+            ) as bairro1,
+    
+    (select bairros_atendimento.bairro2 
+     from bairros_atendimento where bairros_atendimento.id = anuncios.id_categoria
+            ) as bairro2,
+
+            (select bairros_atendimento.bairro2 
+     from bairros_atendimento where bairros_atendimento.id = anuncios.id_categoria
+            ) as bairro3,
+
+            (select bairros_atendimento.regiao 
+     from bairros_atendimento where bairros_atendimento.id = anuncios.id_categoria
+            ) as regiao,
+
+
     (select usuarios.telefone from usuarios where usuarios.id = anuncios.id_usuario
             ) as telefone
      FROM anuncios where id = :id");

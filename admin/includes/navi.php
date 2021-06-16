@@ -2,11 +2,13 @@
          
          require 'classes/categoria.class.php';
          require 'classes/anuncios.class.php';
+         require 'classes/helpers.php';
          $Categorias = new Categorias;
          $Anuncios = new Anuncios;
          $Usuario = new Usuario;
          $User = $Usuario->getUserByID($_SESSION['cLogin']);
-       
+         $foto = ($User['foto'] == "" ? "assets/images/dash-background.png" : "assets/images/usuario/".$User['foto'] );
+
      ?>
 
 
@@ -15,8 +17,7 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Profile Setting</li>
+      
       </ol>
     </nav>
   </div>
@@ -31,7 +32,7 @@
         <div class="dashboard_menu">
           <div class="dashbord_img">
             <div class="dashboard_back"> <img class="img-fluid w-100" src="../assets/images/dash-background.png" alt="Classified Plus"> </div>
-            <div class="rounded_img"> <img class="img-fluid" src="../assets/images/aditya.png" alt="Classified Plus"> </div>
+            <div class="rounded_img"> <img class="img-fluid" src="<?= $foto; ?>" alt="Classified Plus"> </div>
             <div class="aditya"><?=$User['nome'];?></div>
           </div>
           <ul class="list-unstyled  m-t-20">

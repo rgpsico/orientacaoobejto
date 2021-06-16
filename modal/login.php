@@ -1,27 +1,17 @@
 <?php 
-        require 'admin/classes/config.php';
-        require 'admin/classes/usuario.class.php';
-        $Usuario = New Usuario();
-        if(isset($_POST['email']) && !empty($_POST['email'])){
+      require 'admin/classes/config.php';
+      require 'admin/classes/usuario.class.php';
+         $Usuario = New Usuario();
+      
+        if (isset($_POST['email']) && !empty($_POST['email'])){
             $email     = addslashes($_POST['email']);
             $senha     = $_POST['senha'];
 
-            if($Usuario->login($email,$senha)) {
+            if ($Usuario->login($email,$senha)) {
                 echo "<script>window.location.href='./admin/';</script>";
-
-
-            }else {
-                ?>
-             
-                <script>alert('Senha esta errada')</script>
-                
-
-    <?php
             }
         }
-        
-
-    ?>
+?>
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">

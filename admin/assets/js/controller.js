@@ -1,6 +1,6 @@
 /*DASHBOARD ADMIN */
 
-let btExcluir = document.querySelector('.excluir-anuncio');s
+let btExcluir = document.querySelector('#excluir-anuncio');
 
 btExcluir.addEventListener("click",function(e){
         e.preventDefault();

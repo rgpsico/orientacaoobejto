@@ -134,19 +134,27 @@ $total_anuncios = $Anuncios->getTotalAnuncios($filtros);
                         <td><button type="button" class="btn btn-sm <?php echo $classes ?>"><?= $status ?></button></td>
 
                         <td class="text-truncate"><strong>R$ <?= utf8_decode($anuncio['valor']) ?> </strong></td>
-                        <td class="text-truncate"><a href="<?= HOME ?>?page=detalhe-anuncios&id=<?= $anuncio['id']; ?>"><button type="submit" value="butten"><i class="fa fa-eye"></i></button></a>
-                        <span>
-                        <a href="?page=editar-anuncios&id=<?= $anuncio['id'] ?>">
-                          <button type="submit" value="butten"> 
-                          <i class="fa fa-pencil"></i> </button>
+
+                        <td class="text-truncate" >
+                          <a href="<?= HOME ?>?page=detalhe-anuncios&id=<?= $anuncio['id']; ?>">
+                          <button type="submit" value="butten">
+                          <i class="fa fa-eye"></i>
+                          </button>
                           </a>
+                          <span>
+                              <a href="?page=editar-anuncios&id=<?= $anuncio['id'] ?>">
+                              <button type="submit" value="butten"> 
+                              <i class="fa fa-pencil"></i> </button>
+                              </a>
                           </span>
-                        <span>
-                       
-                          <div  value="excluir" name="excluir" class="excluir-anuncio" > <i class="fa fa-trash"></i> </button>
-                        </span>
+
+                          <span>
+                               <button  value="excluir" name="excluir" >
+                                    <i class="fa fa-trash" id="excluir-anuncio"></i> 
+                                </button>
+                          </span>
                    
-                      </td>
+                        </td>
                     </tr>
                     <?php } ?>
 

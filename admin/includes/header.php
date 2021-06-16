@@ -39,16 +39,11 @@ require 'classes/usuario.class.php';
           <i class="fa fa-bars"></i></button>
         <div class="collapse navbar-collapse" id="h5-info">
           <ul class="navbar-nav">
-            <li class="nav-item dropdown"> 
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Home </a>
-           
-            <li class="nav-item"> <a class="nav-link"  href="04-Category-Page.html">Categoria</a></li>
-            
-            
+            <li class="nav-item"> 
+            <a class="nav-link" href="<?=HOMEAdmin ?>?page=anuncios-admin" > Home </a>
+                                   
             <li class="nav-item"> <a class="nav-link"  href="28-Contact_Us-Page.html">Ajuda</a></li>
-            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-       
-            </li>
+          
           </ul>
           <div class="header_r d-flex">
             <div class="loin"> <a class="nav-link" href="?page=editar-user&id=" data-toggle="modal" data-target="#login"><i class="fa fa-user m-r-5"></i></a>  </div>

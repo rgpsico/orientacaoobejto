@@ -2,6 +2,7 @@
 <?php 
 require('admin/classes/anuncios.class.php');
 require 'admin/classes/categoria.class.php';
+require 'admin/classes/helpers.php';
 require('includes/header.php') ?>
 
 
