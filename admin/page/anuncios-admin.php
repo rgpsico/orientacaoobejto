@@ -9,20 +9,11 @@ if(empty($_SESSION['cLogin'])){
 
 
 
-if(isset($_GET['id']) && !empty($_GET['id'])){
- 
-  $id = $_GET['id'];
-   echo "<script>
-  var r = confirm('Press a button!');
-      if (r == true) {
-        txt = 'You pressed OK!';
-      } else {
-        txt = 'You pressed Cancel!';
-    }
-   </script>";
-   $Anuncios->excluirAnuncio($id);
+  if(isset($_GET['id']) && !empty($_GET['id'])){
+      echo $id = $_GET['id'];
+     $Anuncios->excluirAnuncio($id);
+  }
 
-}
 $filtros = array(
   'categoria' =>'',
   'preco' => '',
@@ -128,7 +119,7 @@ $total_anuncios = $Anuncios->getTotalAnuncios($filtros);
                                         break;                       
                                     }   
                                 ?>
-                    <tr class="border-bottom">
+                    <tr class="border-bottom anuncios-tr" data-key="<?= $anuncio['id'] ?>">
                         <td class="text-truncate">
                           <div class="form-check">
                             <input class="form-check-input" value="" type="checkbox">
@@ -151,10 +142,10 @@ $total_anuncios = $Anuncios->getTotalAnuncios($filtros);
                           </a>
                           </span>
                         <span>
-                        <a href="?page=anuncios-admin&id=<?= $anuncio['id'] ?>">
-                          <button type="submit" value="butten" value="excluir" name="excluir"> <i class="fa fa-trash"></i> </button>
+                       
+                          <div  value="excluir" name="excluir" class="excluir-anuncio" > <i class="fa fa-trash"></i> </button>
                         </span>
-                        </a>
+                   
                       </td>
                     </tr>
                     <?php } ?>

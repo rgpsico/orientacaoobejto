@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 class Anuncios{
     public function getTotalAnuncios(array $filtros){
         global $pdo;

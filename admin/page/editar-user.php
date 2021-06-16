@@ -66,6 +66,17 @@ echo "<script>window.location.href='meus-anuncios.php';</script>";
                   <label>Confirmar-Senha:</label>
                   <input type="password"  class="form-control" placeholder="novasenha" name="novasenha" value="<?php echo $info['senha'] ?>">
                 </div>
+
+                <div class="img_browse">
+                  <label>Adicionar Foto:</label>
+                  <div class="form-group">
+                    <div class="tg-fileuploadlabel">
+                      <label>Por favor selecione sua imagem</label>
+                   
+                      <input type="file"  class="form-control form-control-file text-capitalize btn-success"  name="fotos[]" multiple>
+                      <span>maximo 500KB</span> </div>
+                  </div>
+                </div>
             
                 <input type="submit" class="btn btn-success" value="enviar">
               </form>
