@@ -143,7 +143,7 @@ $total_anuncios = $Anuncios->getTotalAnuncios($filtros);
                         <td><button type="button" class="btn btn-sm <?php echo $classes ?>"><?= $status ?></button></td>
 
                         <td class="text-truncate"><strong>R$ <?= utf8_decode($anuncio['valor']) ?> </strong></td>
-                        <td class="text-truncate"><button type="submit" value="butten"><i class="fa fa-eye"></i></button>
+                        <td class="text-truncate"><a href="<?= HOME ?>?page=detalhe-anuncios&id=<?= $anuncio['id']; ?>"><button type="submit" value="butten"><i class="fa fa-eye"></i></button></a>
                         <span>
                         <a href="?page=editar-anuncios&id=<?= $anuncio['id'] ?>">
                           <button type="submit" value="butten"> 
