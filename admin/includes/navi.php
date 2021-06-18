@@ -41,6 +41,15 @@
             <li><span><i class="fa fa-cog"></i></span><a href="?page=editar-user&id=<?=$_SESSION['cLogin']?>"> Meus Dados </a></li>        
             <li><span><i class="fa fa-sign-in"></i></span><a href="#"> Sair </a></li>
           </ul>
+
+          <ul class="list-unstyled  m-t-20">
+          <li><span><i class="fa fa-sliders"></i></span><a href="?page=categoria-admin"> Dashboard ADMIN </a></li>
+          <li><span><i class="fa fa-cog"></i></span><a href="?page=add-categoria&id=<?=$_SESSION['cLogin']?>">Cadastrar Categoria </a></li>     
+          <li><span><i class="fa fa-sliders"></i></span><a href="?page=anuncios-admin">Config Site </a></li>
+          <li><span><i class="fa fa-cog"></i></span><a href="?page=add-anuncios">Slider</a></li>
+          
+           
+          </ul>
         </div>
       </div>
  

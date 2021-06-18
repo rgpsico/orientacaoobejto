@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group selectdiv">
                       <select class="form-control text-truncate" name="localizacao">
-                        <option>Sua localização</option>
+                        <option>Seu Bairro</option>
                      
                       </select>
                     </div>

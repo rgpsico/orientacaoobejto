@@ -13,7 +13,7 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])){
     $senha        =    addslashes($_POST['senha']);
     $novasenha    =    addslashes($_POST['novasenha']);
     $foto  = $_FILES['foto'];
-   $id = $_SESSION['cLogin'];
+   $id    = $_SESSION['cLogin'];
 
  
 
@@ -60,12 +60,12 @@ echo "<script>window.location.href='meus-anuncios.php';</script>";
                
                 <div class="form-group">
                   <label>Senha:</label>
-                  <input type="password"  class="form-control" placeholder="senha" name="senha" value="<?php echo $info['senha'] ?>">
+                  <input type="text"  class="form-control" placeholder="senha" name="senha" value="<?php echo $info['senha'] ?>">
                 </div>
 
                 <div class="form-group">
                   <label>Confirmar-Senha:</label>
-                  <input type="password"  class="form-control" placeholder="novasenha" name="novasenha" value="<?php echo $info['senha'] ?>">
+                  <input type="text"  class="form-control" placeholder="novasenha" name="novasenha" value="<?php echo $info['senha'] ?>">
                 </div>
 
                 <div class="img_browse">
